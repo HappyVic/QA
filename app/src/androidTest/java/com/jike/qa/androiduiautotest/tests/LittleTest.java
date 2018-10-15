@@ -73,6 +73,10 @@ public class LittleTest extends BaseTest {
         postsPage.collectPost();
     }
 
+    @Test
+    public void littlePaper(){
+
+    }
 
 }
 

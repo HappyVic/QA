@@ -10,6 +10,7 @@ import android.support.test.uiautomator.UiScrollable;
 import android.support.test.uiautomator.UiSelector;
 import android.support.test.uiautomator.UiWatcher;
 
+
 import com.jike.qa.androiduiautotest.utils.CheckFlag;
 import com.jike.qa.androiduiautotest.utils.Click;
 import com.jike.qa.androiduiautotest.utils.PutText;
