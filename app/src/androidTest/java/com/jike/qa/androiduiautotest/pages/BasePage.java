@@ -43,6 +43,15 @@ public class BasePage {
         this.switchToMinePage();
         Click.clickById("com.ruguoapp.jike:id/menu_setting",mDevice);
     }
+
+    public void switchToRecommendPage() throws UiObjectNotFoundException, InterruptedException {
+        this.switchToFirstPage();
+        Click.clickByText("推荐",mDevice);
+    }
+
+    public void switchToPersonalPage(String screenName) throws InterruptedException, UiObjectNotFoundException {
+        Click.clickById(screenName,mDevice);
+    }
 }
 
 

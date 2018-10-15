@@ -9,9 +9,12 @@ import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.Until;
 import com.jike.qa.androiduiautotest.constants.Constants;
 import com.jike.qa.androiduiautotest.pages.DiscoverPage;
+import com.jike.qa.androiduiautotest.pages.FirstPage;
 import com.jike.qa.androiduiautotest.pages.LoginPage;
 import com.jike.qa.androiduiautotest.pages.MinePage;
+import com.jike.qa.androiduiautotest.pages.PersonalPage;
 import com.jike.qa.androiduiautotest.pages.PostsPage;
+import com.jike.qa.androiduiautotest.pages.RecommendPage;
 import com.jike.qa.androiduiautotest.pages.SettingPage;
 
 import org.junit.After;
@@ -28,6 +31,9 @@ public class BaseTest {
     public LoginPage loginPage;
     public PostsPage postsPage;
     public DiscoverPage discoverPage;
+    public FirstPage firstPage;
+    public RecommendPage recommendPage;
+    public PersonalPage personalPage;
 
     public BaseTest(){
         this.mDevice = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
@@ -36,7 +42,9 @@ public class BaseTest {
         this.loginPage = new LoginPage(mDevice);
         this.postsPage = new PostsPage(mDevice);
         this.discoverPage = new DiscoverPage(mDevice);
-
+        this.firstPage = new FirstPage(mDevice);
+        this.recommendPage = new RecommendPage(mDevice);
+        this.personalPage = new PersonalPage(mDevice);
     }
 
     @Before

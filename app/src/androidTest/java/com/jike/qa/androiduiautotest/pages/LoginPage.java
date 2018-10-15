@@ -14,12 +14,8 @@ public class LoginPage extends BasePage {
         super(mDevice);
     }
 
-    public void loginWithQQ() throws UiObjectNotFoundException, InterruptedException {
-        Click.clickById("com.ruguoapp.jike:id/lay_qq", mDevice);
-//        CheckFlag.isObjectFoundById("com.tencent.mobileqq:id/ivTitleName", mDevice);
-
-        //点不到登录按钮，还在解决
-        Click.clickByClass("android.widget.Button",mDevice);
+    public void loginWithWechat() throws UiObjectNotFoundException, InterruptedException {
+        Click.clickById("com.ruguoapp.jike:id/lay_wechat", mDevice);
         CheckFlag.isObjectFoundById("com.ruguoapp.jike:id/tv_profile_desc", mDevice);
     }
 }

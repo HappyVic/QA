@@ -9,9 +9,9 @@ public class ALoginTest extends BaseTest {
 
     @Test
     public void login() throws InterruptedException, UiObjectNotFoundException {
-//        minePage.switchToMinePage();
-//        minePage.toLoginPage();
-//        loginPage.loginWithQQ();
+        minePage.switchToMinePage();
+        minePage.toLoginPage();
+        loginPage.loginWithWechat();
     }
 
 }

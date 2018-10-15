@@ -103,6 +103,12 @@ public class PostsPage extends BasePage {
         CheckFlag.isObjectFoundByText("取消收藏",mDevice);
     }
 
+    public void visitPersonalPage() throws UiObjectNotFoundException, InterruptedException {
+        CheckFlag.flingIfNotFoundById("com.ruguoapp.jike:id/tv_username","android.support.v7.widget.RecyclerView",mDevice);
+        Click.clickById("com.ruguoapp.jike:id/tv_username",mDevice);
+        CheckFlag.isObjectFoundById("com.ruguoapp.jike:id/tv_description",mDevice);
+    }
+
     public void sharePost(){
 
     }

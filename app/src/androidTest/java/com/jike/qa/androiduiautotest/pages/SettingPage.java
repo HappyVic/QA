@@ -17,4 +17,9 @@ public class SettingPage extends BasePage {
         Click.clickById("android:id/button1",mDevice);
         CheckFlag.isObjectFoundById("com.ruguoapp.jike:id/tv_lead_to_login",mDevice);
     }
+
+    public void privacy() throws InterruptedException, UiObjectNotFoundException {
+        Click.clickById("com.ruguoapp.jike:id/lay_private",mDevice);
+        CheckFlag.isObjectFoundById("com.ruguoapp.jike:id/lay_block",mDevice);
+    }
 }
