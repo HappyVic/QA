@@ -1,23 +1,14 @@
 package com.jike.qa.androiduiautotest.pages;
 
-import android.support.test.uiautomator.By;
-import android.support.test.uiautomator.UiCollection;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject;
-import android.support.test.uiautomator.UiObject2;
 import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.support.test.uiautomator.UiScrollable;
 import android.support.test.uiautomator.UiSelector;
-import android.support.test.uiautomator.UiWatcher;
-
-
 import com.jike.qa.androiduiautotest.utils.CheckFlag;
 import com.jike.qa.androiduiautotest.utils.Click;
 import com.jike.qa.androiduiautotest.utils.PutText;
 import com.jike.qa.androiduiautotest.utils.Watcher;
-
-import java.util.LinkedList;
-import java.util.List;
 
 public class PostsPage extends BasePage {
     public PostsPage (UiDevice mDevice){
@@ -109,8 +100,20 @@ public class PostsPage extends BasePage {
         CheckFlag.isObjectFoundById("com.ruguoapp.jike:id/tv_description",mDevice);
     }
 
-    public void sharePost(){
+    public void sharePostToTimeline() throws UiObjectNotFoundException, InterruptedException {
+        CheckFlag.flingIfNotFoundById("com.ruguoapp.jike:id/iv_share","android.support.v7.widget.RecyclerView",mDevice);
+        Click.clickById("com.ruguoapp.jike:id/iv_share",mDevice);
+        Click.clickByText("朋友圈",mDevice);
+        Click.clickByText("发表",mDevice);
+    }
 
+    public void sharePostCardToTimeline() throws UiObjectNotFoundException, InterruptedException {
+        CheckFlag.flingIfNotFoundById("com.ruguoapp.jike:id/iv_share","android.support.v7.widget.RecyclerView",mDevice);
+        Click.clickById("com.ruguoapp.jike:id/iv_share",mDevice);
+        Click.clickByText("动态卡片",mDevice);
+        //不知道为什么，"朋友圈"通过text和classname都无法获取
+        Click.clickByClass("android.widget.LinearLayout",mDevice);
+        Click.clickByText("发表",mDevice);
     }
 
 }

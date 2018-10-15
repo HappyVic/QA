@@ -25,8 +25,8 @@ public class CheckFlag {
 
     //此方法用来检查fatherClass里面有没有id代表的元素，没有就滚动到有为止
     public static void flingIfNotFoundById(String id, String fatherClass,UiDevice mDevice)throws UiObjectNotFoundException{
-        UiObject menuBtn = mDevice.findObject(new UiSelector().resourceId(id));
-        while (!menuBtn.exists()){
+        UiObject object = mDevice.findObject(new UiSelector().resourceId(id));
+        while (!object.exists()){
             FlingFeeds.flingFoward(fatherClass,mDevice);
         }
     }
