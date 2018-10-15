@@ -1,16 +1,18 @@
 package com.jike.qa.androiduiautotest.tests;
 
 
-import com.jike.qa.androiduiautotest.pages.BaseTest;
+import android.support.test.uiautomator.UiObjectNotFoundException;
+
+import org.junit.Test;
 
 public class ALoginTest extends BaseTest {
 
-//    @Test
-//    public void login() throws InterruptedException, UiObjectNotFoundException {
+    @Test
+    public void login() throws InterruptedException, UiObjectNotFoundException {
 //        minePage.switchToMinePage();
 //        minePage.toLoginPage();
 //        loginPage.loginWithQQ();
-//    }
+    }
 
 }
 
