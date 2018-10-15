@@ -8,6 +8,7 @@ import android.support.test.uiautomator.UiSelector;
 import android.support.test.uiautomator.UiWatcher;
 
 public class Watcher {
+    //用来跳过发动态时的新手引导
     public static void PostGuideWatcher(UiDevice mDevice) {
         final UiObject question = mDevice.findObject(new UiSelector().resourceId("com.ruguoapp.jike:id/tv_add_question"));
         final UiObject nextStep = mDevice.findObject(new UiSelector().text("下一步"));
@@ -38,7 +39,7 @@ public class Watcher {
             }
         });
     }
-
+    //此方法没有执行到，不知道为什么
 //    public static void CommentGuideWatcher(UiDevice mDevice){
 //        final UiObject sendBtn = mDevice.findObject(new UiSelector().resourceId("com.ruguoapp.jike:id/lay_send"));
 //        final UiObject agreeBtn = mDevice.findObject(new UiSelector().resourceId("com.ruguoapp.jike:id/tv_cancel"));

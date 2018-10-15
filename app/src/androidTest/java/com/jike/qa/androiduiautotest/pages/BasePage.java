@@ -27,8 +27,21 @@ public class BasePage {
     public void switchToPostsPage() throws InterruptedException, UiObjectNotFoundException {
         Click.clickByText("动态",mDevice);
         CheckFlag.isObjectFoundById("com.ruguoapp.jike:id/lay_chat_entrance",mDevice);
-        UiObject object = mDevice.findObject(new UiSelector().resourceId("xxx").text("xxx"));
-        UiObject2 object1 = mDevice.findObject(By.res("xxx"));
+    }
+
+    public void switchToDiscoverPage() throws InterruptedException, UiObjectNotFoundException {
+        Click.clickByText("发现",mDevice);
+        CheckFlag.isObjectFoundById("com.ruguoapp.jike:id/lay_entrance_daily",mDevice);
+    }
+
+    public void switchToFirstPage() throws InterruptedException, UiObjectNotFoundException {
+        Click.clickByText("首页",mDevice);
+        CheckFlag.isObjectFoundById("com.ruguoapp.jike:id/lay_chat_entrance",mDevice);
+    }
+
+    public void switchToSettingPage() throws InterruptedException, UiObjectNotFoundException {
+        this.switchToMinePage();
+        Click.clickById("com.ruguoapp.jike:id/menu_setting",mDevice);
     }
 }
 

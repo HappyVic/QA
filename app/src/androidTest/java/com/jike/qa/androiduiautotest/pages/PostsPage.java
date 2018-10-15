@@ -61,31 +61,15 @@ public class PostsPage extends BasePage {
 
     //这个方法我没能验证赞数是否增加，获取不到数字，以后再说吧
     public void likePost() throws Exception {
-//        UiCollection feed = new UiCollection(new UiSelector().className("android.widget.RelativeLayout").index(1));
-//        UiObject count = feed.getChild(new UiSelector().resourceId("com.ruguoapp.jike:id/iv_like"));
-//        String count1 = count.getText();
-//        int c = Integer.parseInt(count1);
-
-//        String count1 = mDevice.findObject(new UiSelector().resourceId("com.ruguoapp.jike:id/tv_popularity")).getText();
-//
         Click.clickById("com.ruguoapp.jike:id/iv_like", mDevice);
-//        String count2 = mDevice.findObject(new UiSelector().resourceId("com.ruguoapp.jike:id/tv_popularity")).getText();
-//        int num1 = Integer.parseInt(count1);
-//        int num2 = Integer.parseInt(count2);
-//        if (Integer.parseInt(count1) != Integer.parseInt(count2) - 1){
-//            throw new Exception("点赞没点上");
-//        }
+
     }
 
     public void commentPost() throws InterruptedException, UiObjectNotFoundException {
         //如果界面上没有评论按钮，就一只向下滚动直到找到为止
-        UiObject commentBtn;
-        commentBtn = mDevice.findObject(new UiSelector().resourceId("com.ruguoapp.jike:id/iv_comment"));
-        while (!commentBtn.exists()){
-            UiScrollable postsFeed = new UiScrollable(new UiSelector().className("android.support.v7.widget.RecyclerView"));
-            postsFeed.flingForward();
-        }
-        commentBtn.click();
+
+        CheckFlag.flingIfNotFoundById("com.ruguoapp.jike:id/iv_comment","android.support.v7.widget.RecyclerView",mDevice);
+        Click.clickById("com.ruguoapp.jike:id/iv_comment",mDevice);
 
         PutText.clearAndInput("123","com.ruguoapp.jike:id/et_input",mDevice);
         Click.clickById("com.ruguoapp.jike:id/lay_send",mDevice);
@@ -100,13 +84,8 @@ public class PostsPage extends BasePage {
 
     public void repost() throws UiObjectNotFoundException, InterruptedException {
         //如果界面上没有转发按钮，就一只向下滚动直到找到为止
-        UiObject repostBtn;
-        repostBtn = mDevice.findObject(new UiSelector().resourceId("com.ruguoapp.jike:id/iv_repost"));
-        while (!repostBtn.exists()){
-            UiScrollable postsFeed = new UiScrollable(new UiSelector().className("android.support.v7.widget.RecyclerView"));
-            postsFeed.flingForward();
-        }
-        repostBtn.click();
+        CheckFlag.flingIfNotFoundById("com.ruguoapp.jike:id/iv_repost","android.support.v7.widget.RecyclerView",mDevice);
+        Click.clickById("com.ruguoapp.jike:id/iv_repost",mDevice);
 
         PutText.clearAndInput("123","com.ruguoapp.jike:id/et_input",mDevice);
         Click.clickById("com.ruguoapp.jike:id/tv_send",mDevice);
@@ -115,17 +94,11 @@ public class PostsPage extends BasePage {
     }
 
     public void collectPost() throws UiObjectNotFoundException, InterruptedException {
-        UiObject menuBtn;
-        menuBtn = mDevice.findObject(new UiSelector().resourceId("com.ruguoapp.jike:id/iv_menu"));
-        while (!menuBtn.exists()){
-            UiScrollable postsFeed = new UiScrollable(new UiSelector().className("android.support.v7.widget.RecyclerView"));
-            postsFeed.flingForward();
-        }
-        menuBtn.click();
+        CheckFlag.flingIfNotFoundById("com.ruguoapp.jike:id/iv_menu","android.support.v7.widget.RecyclerView",mDevice);
+        Click.clickById("com.ruguoapp.jike:id/iv_menu",mDevice);
 
         Click.clickByText("加入收藏",mDevice);
         //检查
-        menuBtn.click();
         CheckFlag.isObjectFoundByText("取消收藏",mDevice);
     }
 

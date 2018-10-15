@@ -3,14 +3,12 @@ package com.jike.qa.androiduiautotest.tests;
 
 import android.support.test.runner.AndroidJUnit4;
 import android.support.test.uiautomator.UiObjectNotFoundException;
-import android.support.test.uiautomator.UiSelector;
-import android.util.Log;
 
+import com.jike.qa.androiduiautotest.pages.DiscoverPage;
 import com.jike.qa.androiduiautotest.pages.LoginPage;
 import com.jike.qa.androiduiautotest.pages.MinePage;
 import com.jike.qa.androiduiautotest.pages.PostsPage;
 import com.jike.qa.androiduiautotest.pages.SettingPage;
-import com.jike.qa.androiduiautotest.utils.CheckFlag;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,20 +19,21 @@ public class LittleTest extends BaseTest {
     private SettingPage settingPage = new SettingPage(mDevice);
     private LoginPage loginPage = new LoginPage(mDevice);
     private PostsPage postsPage = new PostsPage(mDevice);
+    private DiscoverPage discoverPage = new DiscoverPage(mDevice);
 
 //    @Test
-////    public void login() throws InterruptedException, UiObjectNotFoundException {
-////        minePage.switchToMinePage();
-////        minePage.toLoginPage();
-////        loginPage.loginWithQQ();
-////    }
-////
-////    @Test
-////    public void logout() throws UiObjectNotFoundException, InterruptedException {
-////        minePage.switchToMinePage();
-////        minePage.clickSettingBtn();
-////        settingPage.logout();
-////    }
+//    public void login() throws InterruptedException, UiObjectNotFoundException {
+//        minePage.switchToMinePage();
+//        minePage.toLoginPage();
+//        loginPage.loginWithQQ();
+//    }
+
+    @Test
+    public void logout() throws UiObjectNotFoundException, InterruptedException {
+        minePage.switchToMinePage();
+        minePage.clickSettingBtn();
+        settingPage.logout();
+    }
 
     @Test
     public void createPost() throws UiObjectNotFoundException, InterruptedException {
@@ -74,8 +73,18 @@ public class LittleTest extends BaseTest {
     }
 
     @Test
-    public void littlePaper(){
+    public void dailyPaper() throws UiObjectNotFoundException, InterruptedException {
+        discoverPage.switchToDiscoverPage();
+        discoverPage.dailyPaper();
+    }
 
+    @Test
+    public void blockUser(){
+
+    }
+
+    @Test
+    public void unblockUser(){
     }
 
 }

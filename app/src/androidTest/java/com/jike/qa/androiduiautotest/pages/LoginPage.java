@@ -16,9 +16,10 @@ public class LoginPage extends BasePage {
 
     public void loginWithQQ() throws UiObjectNotFoundException, InterruptedException {
         Click.clickById("com.ruguoapp.jike:id/lay_qq", mDevice);
-        CheckFlag.isObjectFoundById("com.tencent.mobileqq:id/ivTitleName", mDevice);
+//        CheckFlag.isObjectFoundById("com.tencent.mobileqq:id/ivTitleName", mDevice);
 
-        Click.clickByText("登录",mDevice);
+        //点不到登录按钮，还在解决
+        Click.clickByClass("android.widget.Button",mDevice);
         CheckFlag.isObjectFoundById("com.ruguoapp.jike:id/tv_profile_desc", mDevice);
     }
 }
