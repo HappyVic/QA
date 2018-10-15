@@ -99,6 +99,7 @@ public class PostsPage extends BasePage {
 
         Click.clickByText("加入收藏",mDevice);
         //检查
+        Click.clickById("com.ruguoapp.jike:id/iv_menu",mDevice);
         CheckFlag.isObjectFoundByText("取消收藏",mDevice);
     }
 
