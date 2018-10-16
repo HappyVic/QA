@@ -107,13 +107,14 @@ public class PostsPage extends BasePage {
         Click.clickByText("发表",mDevice);
     }
 
-    public void sharePostCardToTimeline() throws UiObjectNotFoundException, InterruptedException {
-        CheckFlag.flingIfNotFoundById("com.ruguoapp.jike:id/iv_share","android.support.v7.widget.RecyclerView",mDevice);
-        Click.clickById("com.ruguoapp.jike:id/iv_share",mDevice);
-        Click.clickByText("动态卡片",mDevice);
-        //不知道为什么，"朋友圈"通过text和classname都无法获取
-        Click.clickByClass("android.widget.LinearLayout",mDevice);
-        Click.clickByText("发表",mDevice);
-    }
+//    这个方法算了，也没啥必要
+//    public void sharePostCardToTimeline() throws UiObjectNotFoundException, InterruptedException {
+//        CheckFlag.flingIfNotFoundById("com.ruguoapp.jike:id/iv_share","android.support.v7.widget.RecyclerView",mDevice);
+//        Click.clickById("com.ruguoapp.jike:id/iv_share",mDevice);
+//        Click.clickByText("动态卡片",mDevice);
+//        //不知道为什么，"朋友圈"通过text和classname都无法获取
+//        Click.clickByClass("android.widget.LinearLayout",mDevice);
+//        Click.clickByText("发表",mDevice);
+//    }
 
 }

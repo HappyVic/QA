@@ -12,10 +12,10 @@ public class SharePostTest extends BaseTest {
         postsPage.sharePostToTimeline();
     }
 
-    @Test
-    public void sharePostCardToTimeline() throws InterruptedException, UiObjectNotFoundException {
-        postsPage.switchToPostsPage();
-        postsPage.sharePostCardToTimeline();
-    }
+//    @Test
+//    public void sharePostCardToTimeline() throws InterruptedException, UiObjectNotFoundException {
+//        postsPage.switchToPostsPage();
+//        postsPage.sharePostCardToTimeline();
+//    }
 
 }
